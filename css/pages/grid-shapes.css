@@ -1,0 +1,217 @@
+.gallery {
+	--g: 5px;
+}
+.gallery > div {
+	width: 50%;
+}
+/* GALLERY 1 - APPLYING GRID AND CLIP PATHS */
+.gallery1-nonshaped {
+    display: flex;
+    width: 100%;
+    gap: var(--g);
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.gallery1-nonshaped img {
+	width: 49.5%;
+	height: 100%;
+	object-fit: cover;
+	cursor: pointer;
+	transition: .5s 
+}
+.gallery1-shaped {
+	display: grid;
+	width: 100%;
+   /* the size */
+	grid: auto-flow 1fr/repeat(3,1fr);
+	gap: var(--g);
+}
+.gallery1-shaped img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	filter: grayscale();
+	cursor: pointer;
+	transition: .5s 
+}
+.gallery1-shaped img:hover {
+	filter: grayscale(0);
+}
+.gallery1-shaped img:nth-child(2) {
+	grid-area: 1/2/span 2/span 2;
+	clip-path: polygon(0 0,100% 0,100% 100%,calc(50% + var(--g)/4) 100%,0 calc(50% - var(--g)/4)) 
+}
+.gallery1-shaped img:nth-child(3) {
+	grid-area: 2/1/span 2/span 2;
+	clip-path: polygon(0 0,calc(50% - var(--g)/4) 0,100% calc(50% + var(--g)/4),100% 100%,0 100%);
+}
+@media screen and (min-width: 991px) {
+	.gallery1-explain img {
+		width: 350px;
+	}
+	.gallery1-explain {
+		column-count: 2;
+		gap: 5%;
+	}
+}
+
+
+
+
+/* GALLERY 2 - APPLYING GRID AND CLIP PATHS */
+.gallery2-nonshaped {
+    display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+.gallery2-nonshaped img {
+	width: 49.5%;
+	height: 350px;
+	object-fit: cover;
+}
+  .gallery2-shaped {
+	--g: 8px; /* the gap */
+	
+	display: grid;
+	clip-path: inset(1px); /* to avoid visual glitchs */
+  }
+  .gallery2-shaped > img {
+	--_p: calc(-1*var(--g));
+	grid-area: 1/1;
+	width: 350px; /* control the size */
+	cursor: pointer;
+	transition: .4s .1s;
+  }
+  .gallery2-shaped > img:first-child {
+	clip-path: polygon(0 0, calc(100% + var(--_p)) 0 , 0 calc(100% + var(--_p)))
+  }
+  .gallery2-shaped > img:last-child {
+	clip-path: polygon(100% 100%, 100% calc(0% - var(--_p)), calc(0% - var(--_p)) 100%)
+  }
+  .gallery2-shaped > img:first-child:hover {
+	--_p: calc(50% - var(--g));
+  }
+  .gallery2-shaped > img:first-child:hover + img {
+	--_p: calc(-50% - var(--g));
+  }
+  .gallery2-shaped > img:nth-child(2):hover {
+	--_p: calc(50% - var(--g));
+  }
+  .gallery2-shaped > img:first-child:has(+ img:nth-child(2):hover) {
+	--_p: calc(-50% - var(--g));
+  }
+  
+
+
+
+
+/* GALLERY 3 - APPLYING GRID AND CLIP PATHS */
+.gallery3-nonshaped  {
+	flex-wrap: wrap;
+	display: flex;
+	gap: 5px;
+	margin-top: 20px;
+}
+	.gallery3-nonshaped > img {
+		height: 200px;
+		width: 49.5%;
+		object-fit: cover;
+	}
+
+  .gallery3-shaped {
+	--g: 8px;   /* the gap */
+	--s: 400px; /* the size */
+	
+	display: grid;
+	border-radius: 50%;
+	margin-top: 20px;
+  }
+  .gallery3-shaped > img {
+	grid-area: 1/1;
+	width: 400px;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 50%;
+	transform: translate(var(--_x,0),var(--_y,0));
+	cursor: pointer;
+	z-index: 0;
+	transition: .3s, z-index 0s .3s;
+  }
+  .gallery3-shaped img:hover {
+	--_i: 1;
+	z-index: 1;
+	transition: transform .2s, clip-path .3s .2s, z-index 0s;
+  }
+  .gallery3-shaped:hover img {
+	transform: translate(0,0);
+  }
+  .gallery3-shaped > img:nth-child(1) {
+	clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+	--_y: calc(-1*var(--g))
+  }
+  .gallery3-shaped > img:nth-child(2) {
+	clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+	--_x: var(--g)
+  }
+  .gallery3-shaped > img:nth-child(3) {
+	clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+	--_y: var(--g)
+  }
+  .gallery3-shaped > img:nth-child(4) {
+	clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+	--_x: calc(-1*var(--g))
+  }
+
+
+
+
+
+
+
+  .gallery4 {
+	display: grid;
+	width: min(800px,100%); /* control the size here */
+	margin: 50px auto;
+	grid: repeat(2,1fr)/repeat(4,1fr); 
+	aspect-ratio: 2;
+  }
+  .gallery4 img {
+	width: 0;
+	height: 0;
+	min-height: 100%;
+	min-width: 100%;
+	object-fit: cover;
+	cursor: pointer;
+	filter: grayscale(100%) brightness(0.5);
+	transition: .3s;
+  }
+  .gallery4:hover img {
+	transition: 0.2s all ease-in-out;
+  }
+  .gallery4 img:hover {
+	filter: grayscale(0%) brightness(1);
+	/* clip-path: polygon(0 0, 0 0, 0 100%, 100% 100%, 100% 0) !important;
+	z-index: 9;
+    position: relative; */
+  }
+  .gallery4 img:nth-child(1) {
+	grid-area: 1/1/span 2/span 2;
+	clip-path: polygon(0 0,100% 0,0 100%);
+  }
+  .gallery4 img:nth-child(2) {
+	grid-area: 1/2/span 2/span 2;
+	clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+  }
+  .gallery4 img:nth-child(3) {
+	grid-area: span 2/span 2/-1/-1;
+	clip-path: polygon(0 0,100% 0,100% 100%);
+  }
+  .gallery4 img:nth-child(4) {
+	grid-area: 2/1/span 1/span 2;
+	clip-path: polygon(50% 0,100% 100%,0 100%);
+  }
+  .gallery4 img:nth-child(5) {
+	grid-area: span 1/span 2/-1/-1;
+	clip-path: polygon(50% 0,100% 100%,0 100%);
+  }
+  

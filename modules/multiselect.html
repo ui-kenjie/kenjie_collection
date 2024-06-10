@@ -1,0 +1,357 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>UI Libraries | MultiSelect</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- jQuery -->
+    <script src="../vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+    <!-- MultiSelect -->
+    <link rel="stylesheet" href="../vendor/bootstrap-select/css/bootstrap-select.min.css">
+    <script src="../vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- vendor script -->
+    <script src="../vendor/bootstrap-v4.4.1/js/popper.min.js"></script>
+    <script src="../vendor/bootstrap-v4.4.1/js/bootstrap.min.js"></script>
+    <script src="../vendor/aos/js/aos.js"></script>
+    <script src="../vendor/animatedheadlines/js/animatedheadlines.js"></script>
+
+    <!-- FONTAWESEOME -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="../vendor/aos/css/aos.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../vendor/animatedheadlines/css/animatedheadlines.css">
+    <!-- Style CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <!-- Main js -->
+    
+</head>
+<body><!-- main wrapper -->
+
+
+    <header class="main-header">
+        <div class="container-fluid bg-color-dgreen pt-3 pb-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">Bootstrap MultiSelect</a></h2>
+                    </div>
+                    <div class="col-md">
+                        <ul class=" main-nav m-0 text-uppercase ">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle text-white text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Categories</button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a href="#" class="dropdown-item">sample 1</a>
+                                        <a href="#" class="dropdown-item">sample 2</a>
+                                        <a href="#" class="dropdown-item">sample 3</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <form action="#">
+                                    <input type="text" placeholder="Search..." name="search">
+                                    <button type="submit" class="search-btn"><img src="../images/common/search-icon.png" alt=""></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="body-mainContent multiselect-mainContent pt-4 pb-4 ">
+
+        <div class="multiselect-banner">
+            <div class="text-center">
+                <img src="../images/common/ms-logo.png" alt="SLIDE BOX icon/logo" class="page-logo">
+                <h2>Bootstrap Multiselect</h2>
+                <p class="text-center">
+                    Bootstrap-jQuery plugin that brings select element to 21st Century with intuitive multiselection, searching and much more.<br>
+                    &lt;!-- MultiSelect --&gt;<br>
+                    &lt;link rel="stylesheet" href="vendor/bootstrap-select/css/bootstrap-select.min.css"&gt;<br>
+                    &lt;script src="vendor/bootstrap-select/js/bootstrap-select.min.js">&lt;/script&gt;
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="m-2 bg-dark border border-dark p-3">
+                        <select name="" id="" class="selectpicker w-100 bg-light" >
+                            <option value="" >Columbia</option>
+                            <option value="" >Venezuela</option>
+                            <option value="" >Ecuador</option>
+                        </select>
+                        <div class="multiselect-box-content text-white">
+                            <h3 class="m-0 pt-2">Standard Select Box</h3>
+                            <p class="standard-select mb-0 mt-2">
+                                <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<select class="selectpicker w-100 bg-light" >
+ <option>Columbia</option>
+ <option>Venezuela</option>
+ <option>Ecuador</option>
+</select>
+                                </textarea>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="m-2 bg-dark border border-dark p-3">
+                        <select name="" id="selectPick" class="selectpicker w-100 bg-light" >
+                          <optgroup label="Country">
+                            <option value="" >Columbia</option>
+                            <option value="" >Venezuela</option>
+                            <option value="" >Ecuador</option>
+                          </optgroup>  
+                          <optgroup label="Camping">
+                            <option value="" >Tent</option>
+                            <option value="" >Flashlight</option>
+                            <option value="" >Toilet Paper</option>
+                          </optgroup> 
+                        </select>
+                        <div class="multiselect-box-content text-white">
+                            <h3 class="m-0 pt-2">Standard w/ optgroups</h3>
+                            <p class="standard-select mb-0 mt-2">
+                                <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<select class="selectpicker w-100 bg-light" >
+    <optgroups label="Country">
+        <option value="" >Columbia</option>
+        <option value="" >Venezuela</option>
+        <option value="" >Ecuador</option>
+      </optgroups>  
+      <optgroups label="Camping">
+        <option value="" >Tent</option>
+        <option value="" >Flashlight</option>
+        <option value="" >Toilet Paper</option>
+      </optgroups>
+</select>
+                                </textarea>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="m-2 bg-dark border border-dark p-3">
+                        <select name="" id="" class="selectpicker w-100 bg-light" multiple>
+                            <option value="" >Columbia</option>
+                            <option value="" >Venezuela</option>
+                            <option value="" >Ecuador</option>
+                        </select>
+                        <div class="multiselect-box-content text-white">
+                            <h3 class="m-0 pt-2">Multiple Select Box</h3>
+                            <p class="standard-select mb-0 mt-2">
+                                <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<select class="selectpicker w-100 bg-light" multiple>
+ <option>Columbia</option>
+ <option>Venezuela</option>
+ <option>Ecuador</option>
+</select>
+                                </textarea>
+                                &nbsp;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="m-2 bg-dark border border-dark p-3">
+                        <select name="" id="selectPick" class="selectpicker w-100 bg-light" multiple data-live-search="true">
+                            <option value="" data-tokens="firstchoice Columbia, Venezuela, Ecuador">Columbia, Venezuela, Ecuador</option>
+                            <option value="" data-tokens="secondchoice Chile, Peru, Argentina">Chile, Peru, Argentina</option>
+                            <option value="" data-tokens="thirdchoice Bolivia, Uruguay, Brazil">Bolivia, Uruguay, Brazil</option>
+                        </select>
+                        <div class="multiselect-box-content text-white">
+                            <h3 class="m-0 pt-2">Live Search</h3>
+                            <p class="standard-select mb-0 mt-2">
+                                <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<select class="selectpicker w-100 bg-light" multiple data-live-search="true">
+        <option value="" >Columbia, Venezuela, Ecuador</option>
+        <option value="" >Chile, Peru, Argentina</option>
+        <option value="" >Bolivia, Uruguay, Brazil</option>
+</select>
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+<select class="selectpicker w-100 bg-light" multiple data-live-search="true">
+    <option value="" data-tokens="firstchoice Columbia, Venezuela, Ecuador">Columbia, Venezuela, Ecuador</option>
+    <option value="" data-tokens="secondchoice Chile, Peru, Argentina">Chile, Peru, Argentina</option>
+    <option value="" data-tokens="thirdchoice Bolivia, Uruguay, Brazil">Bolivia, Uruguay, Brazil</option>
+</select>
+                                </textarea>
+                            <span>Apply Keywords with <i class="text-warning">data-tokens</i> attribute to improve searchability</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="m-2 bg-dark border border-dark p-3">
+                        <div class="two-select">
+                        <select name="" id="" class="selectpicker w-50 bg-light " multiple data-max-options="2">
+                            <option value="" >Columbia</option>
+                            <option value="" >Venezuela</option>
+                            <option value="" >Ecuador</option>
+                        </select>
+                        <select name="" id="" class="selectpicker w-50 bg-light  " multiple >
+                          <optgroup label="Country" data-max-options="2">
+                            <option value="" >Columbia</option>
+                            <option value="" >Venezuela</option>
+                            <option value="" >Ecuador</option>
+                          </optgroup>  
+                          <optgroup label="Camping" data-max-options="2">
+                            <option value="" >Tent</option>
+                            <option value="" >Flashlight</option>
+                            <option value="" >Toilet Paper</option>
+                          </optgroup> 
+                        </select>
+                        </div>
+                        <div class="multiselect-box-content text-white pt-2 mt-2"">
+                            <h3 class="m-0 pt-2">Limit Number of Selection</h3>
+                            <p class="standard-select mb-0 mt-2">
+                                <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<select name="" id="" class="selectpicker w-50 bg-light " multiple data-max-options="2">
+    <option value="" >Venezuela</option>
+    <option value="" >Ecuador</option>
+</select>
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<select name="" id="" class="selectpicker w-50 bg-light  " multiple >
+    <optgroup label="Country" data-max-options="2">
+        <option value="" >Columbia</option>
+        <option value="" >Venezuela</option>
+        <option value="" >Ecuador</option>
+    </optgroup>  
+    <optgroup label="Camping" data-max-options="2">
+        <option value="" >Tent</option>
+        <option value="" >Flashlight</option>
+        <option value="" >Toilet Paper</option>
+    </optgroup> 
+    <option value="" >Columbia</option>
+</select>
+                                </textarea>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="m-2 bg-dark border border-dark p-3">
+                        <select name="" id="" class="selectpicker w-100 bg-light" multiple data-selected-text-format="count > 3" >
+                            <option value="" >Columbia</option>
+                            <option value="" >Venezuela</option>
+                            <option value="" >Ecuador</option>
+                            <option value="" >Brazil</option>
+                            <option value="" >Argentina</option>
+                        </select>
+                        <div class="multiselect-box-content text-white">
+                            <h3 class="m-0 pt-2">Selected Text Format</h3>
+                            <p class="standard-select mb-0 mt-2">
+                                <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<select name="" id="" class="selectpicker w-100 bg-light" multiple data-selected-text-format="count > 3" >
+ <option value="" >Brazil</option>
+ <option value="" >Argentina</option>
+ <option value="" >Columbia</option>
+ <option value="" >Ecuador</option>
+ <option value="" >Venezuela</option>
+</select>
+                                </textarea>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="container-fluid bg-color-dgreen pt-5 pb-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                    </div>
+                    <div class="col-md">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+                            
+                            
+
+</body>
+<style>
+    
+    .multiselect-mainContent {
+        min-height: 60vh;
+    }
+    .main-footer {
+        position: absolute;
+        width: 100%;
+    }
+    .dropdown-menu.inner li {
+        padding: 0 5px;
+    }
+    .dropdown-menu.inner li:hover {
+        background: #f6f6f6;
+        padding: 0 5px;
+    }
+    p.standard-select {
+        font-size: 13px;
+    } 
+    p.standard-select  textarea {
+        min-height: 180px;
+        max-height: 180px;
+    }  
+    .multiselect-box-content h3 {
+        color: #fea7a7;
+    }
+    .bootstrap-select.btn-group .dropdown-menu li.hidden {
+        display: none;
+    }
+    .two-select {
+        display: flex;
+    }
+    .two-select .btn-group {
+        margin-right: 5px;
+    }
+</style>
+<script>
+    
+    $('select').selectpicker();
+
+    $(document).ready(function(){
+
+        $('.glyphicon-ok').append('<i class="fas fa-check"></i>')
+        var bodyHeight = $('body').height();
+        var windowHeight = $(window).height();
+        var footerHeight = $('.main-footer').height();
+        var headerHeight = $('.main-header').height();
+        if (bodyHeight+footerHeight < windowHeight) {
+            $('footer.main-footer').css('bottom', '0' );
+        }
+        else if (bodyHeight > windowHeight) {
+            $('footer.main-footer').css('top',bodyHeight + 100);
+        }
+        $('body').css({
+            'padding-bottom': footerHeight + 'px'
+        });
+    });
+</script>
+</html>

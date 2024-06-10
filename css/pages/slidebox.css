@@ -1,0 +1,205 @@
+img.page-logo {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+
+/* STYLE FOR SLIDEBOX CLICK */
+.slidebox-click .slidebox-front {
+    margin: 30px 0 0;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 0 2px #ccc;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99;
+}
+.slidebox-click .slidebox-front.toggle > * {
+    opacity: 0.5;
+    transition: 0.2s all ease-in-out;
+}
+.slidebox-click .slidebox-front.toggle {
+    box-shadow: 0 0 2px #001e26;
+}
+.slidebox-click .slidebox-mod {
+    position: relative;
+}
+.slidebox-click .slidebox-mod img {
+    width: 50px;
+    padding: 5px 10px;
+    border-right: 2px solid #ccc;
+}
+.slidebox-click .slidebox-mod .slidebox-content {
+    margin-left: 10px;
+}
+.slidebox-click .slidebox-toggle-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: none;
+    z-index: 99;
+}
+
+/* STYLE FOR SLIDEBOX CLICK WITH ICON */
+.slidebox-click-icon .slidebox-front {
+    margin: 35px 0 0;
+    padding: 10px 10px 30px;
+    background: #fff;
+    box-shadow: 0 0 2px #ccc;
+    align-items: center;
+    z-index: 99;
+}
+.slidebox-click-icon .slidebox-mod {
+    position: relative;
+}
+.slidebox-click-icon .slidebox-mod img {
+    width: 50px;
+    padding: 5px 10px;
+}
+.slidebox-click-icon .slidebox-toggle-content {
+    display: none;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 2px #fff;
+    z-index: 99;
+}
+.slidebox-click-icon .slidebox-front button {
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    transform: rotate(90deg);
+    border: 0;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -10%;
+    background: var(--dark-green);
+    z-index: 999;
+    transition: 0.2s all ease-in-out;
+}
+.slidebox-click-icon .slidebox-front button.toggle  {
+    transform: rotate(-90deg);
+    color: var(--dark-green);
+    background: var(--medium-grey);
+}
+span.slidebox-btn-icon {
+    font-size: 15px;
+}
+
+
+
+/* STYLE FOR SLIDEBOX HOVER */
+.slidebox-hover .slidebox-front {
+    margin: 35px 0 0;
+    padding: 20px 10px;
+    background: #fff;
+    box-shadow: 0 0 2px #ccc;
+    align-items: center;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.slidebox-hover .slidebox-front:after {
+    content: url(../../images/common/sb-logo.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    background: rgb(246 246 246 / 74%);
+    transition: 0.2s all ease-in-out;
+    text-align: center;
+    padding-top: 5px;
+    display: none;
+}
+.slidebox-hover .slidebox-mod {
+    position: relative;
+}
+.slidebox-hover .slidebox-mod img{
+    width: 50px;
+    border: 1px solid;
+    border-radius: 100px;
+    height: 50px;
+    margin: 5px 20px;
+    object-fit: cover;
+}
+.slidebox-hover .slidebox-toggle-content {
+    display: none;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 2px #fff;
+    z-index: 99;
+}
+.slidebox-hover .slidebox-mod .slidebox-content {
+    margin-left: 10px;
+}
+
+
+
+@media screen and (max-width: 320px) {
+
+
+}
+
+@media screen and (min-width: 768px) {
+    .slidebox-hover .slidebox-front:hover:after {
+        padding-top: 20px;
+    }
+    .slidebox-click .slidebox-mod, .slidebox-click-icon .slidebox-mod, .slidebox-hover  .slidebox-mod  {
+        margin: 20px 10px;
+    }
+    .slidebox-click-icon .slidebox-front button {
+        height: 40px;
+        width: 40px;
+    }
+    span.slidebox-btn-icon {
+        font-size: 21px;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .slidebox-hover .slidebox-front:hover:after {
+        padding-top: 30px;
+    }
+    .slidebox-click .slidebox-mod img, .slidebox-click-icon .slidebox-mod img {
+        width: 100px;
+        padding: 20px 20px;
+    }
+    .slidebox-hover .slidebox-mod img{
+        width: 100px;
+        border: 1px solid;
+        border-radius: 100px;
+        height: 100px;
+        margin: 5px 20px;
+        object-fit: cover;
+    }
+    .slidebox-click .slidebox-mod .slidebox-content, .slidebox-hover .slidebox-content {
+        margin-left: 20px;
+    }
+    .slidebox-click .slidebox-mod, .slidebox-click-icon .slidebox-mod, .slidebox-hover .slidebox-mod {
+        margin: 20px 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    
+}
+
+@media screen and (min-width: 1600px) {
+
+    
+}

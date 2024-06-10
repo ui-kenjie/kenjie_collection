@@ -1,0 +1,19 @@
+:root {
+  /* text SHADOW */
+  --shadow-violet:#67007d 1px 1px 10px, #67007d 1px 1px 10px, #67007d 1px 1px 10px;
+
+  /* FONTS */
+  --mont-black: 'Montserrat-Black', sans-serif;
+  --mont-bold: 'Montserrat-Bold', sans-serif;
+  --mont-regular: 'Montserrat-Regular', sans-serif;
+
+  --mobile-heading: 18px;
+  --medium-heading: 34px;
+  --large-heading: 43px;
+
+  /* COLORS */
+  --yellow-text: #f7e51b;
+  --dark-green: #001e26;
+  --medium-grey: #ededed;
+  --light-grey: #f4f4f6;
+}

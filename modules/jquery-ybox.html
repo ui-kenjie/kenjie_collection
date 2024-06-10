@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>UI Libraries | jQuery Multi-Step</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery -->
+  <script src="../vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+  <!-- vendor script -->
+  <script src="../vendor/bootstrap-v4.4.1/js/popper.min.js"></script>
+  <script src="../vendor/bootstrap-v4.4.1/js/bootstrap.min.js"></script>
+  <script src="../vendor/aos/js/aos.js"></script>
+
+  <!-- vendor css -->
+  <link rel="stylesheet" href="../vendor/aos/css/aos.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap-grid.min.css">
+
+  <!-- VENDOR PLUGIN -->
+  <link rel="stylesheet" href="../vendor/modal-popup-ybox/css/yBox.min.css">
+  
+
+
+
+
+  <!-- Style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+  <!-- Main js -->
+
+
+
+
+</head>
+<body class="home body multi-step">
+
+    
+    <header class="main-header">
+        <div class="container-fluid bg-color-dgreen pt-3 pb-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                    </div>
+                    <div class="col-md">
+                        <ul class=" main-nav m-0 text-uppercase ">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle text-white text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Categories</button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a href="#" class="dropdown-item">sample 1</a>
+                                        <a href="#" class="dropdown-item">sample 2</a>
+                                        <a href="#" class="dropdown-item">sample 3</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <form action="#">
+                                    <input type="text" placeholder="Search..." name="search">
+                                    <button type="submit" class="search-btn"><img src="../images/common/search-icon.png" alt=""></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="mainContent container-fluid pt-5 pr-0 pl-0">
+
+
+        <div class="slidebox-banner container mb-5">
+            <div class="text-center">
+                <img src="../images/common/yb-logo.png" alt="SLIDE BOX icon/logo" class="page-logo">
+                <h2>jQuery yBox: Advanced Modal Popup Plugin Examples</h2>
+                <p>An animated, easy-to-use, feature-rich, jQuery modal popup plugin for any web content such text, iframes, images, galleries, and&nbsp;much&nbsp;more.</p>
+            </div>
+        </div>
+
+        <!-- START OF THE CONTENT -->
+
+        <div class="container ">
+
+
+          <section class="popup-onload ">
+            <h2>Show The Popup On Page Load</h2>
+            <div class="code-content">
+              <code> <span class="blue">&lt;script&gt;</span> yBox('WelCome'); <span class="blue">&lt;/script&gt;</span></code>
+            </div>
+          </section>
+
+
+          <hr class="mt-5 mb-5">
+
+
+          <section class="popup-onload ">
+            <h2>Multiple Popups</h2>
+            <a href="#link1" class="yBox btn btn-success">Click Me</a>
+            <div class="code-content mt-3">
+              <code><span class="blue">&lt;a</span> <span class="red">href</span>="<span class="purple">#link1</span>"<span class="blue"> <span class="red">class</span>="<span class="purple">yBox</span>"&gt; &lt;/a&gt;</span></code>
+            </div>
+            <div class="d-none">
+              <div id="link1">
+                <div class="inner" style="width:200px;height:100px">
+                  Hello
+                  <div style="padding:20px 0 0 0;">
+                    <a href="#link2" class="yBox btn btn-success">Link 2</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-none">
+              <div id="link2">Hello again :)</div>
+            </div>
+          </section>
+
+
+          <hr class="mt-5 mb-5">
+
+
+          <section class="popup-onload ">
+            <h2>Multiple Popups</h2>
+            <a href="https://www.youtube.com/watch?v=tysrfYRPZio" class="yBox yBox_iframe" rel="nofollow" title="Click Here">
+              <img id="" src=".././images/common/0.jpg" alt="" width="300" height="200" />
+            </a>
+            <div class="code-content mt-3">
+              <code><span class="blue">&lt;a</span> <span class="red">href</span>="<span class="purple">https://www.youtube.com...</span>" <span class="red">class</span>="<span class="purple">yBox yBox_iframe</span>"<span class="blue">&gt; &lt;/a&gt;</span></code>
+            </div>
+          </section>
+
+
+          <hr class="mt-5 mb-5">
+
+
+          <section class="popup-onload ">
+            <h2>Gallery Lightbox | per group</h2>
+            <div class="group-wrap">
+              <a href=".././images/common/commingsoon.jpg" class="yBox" data-ybox-group="group1">
+                <img src=".././images/common/commingsoon.jpg" alt="" width="200" />
+              </a>
+              <a href=".././images/common/dragdrop.jpg" class="yBox" data-ybox-group="group1">
+                <img src=".././images/common/dragdrop.jpg" alt="" width="200" />
+              </a>
+              <a href=".././images/common/multiselect.jpg" class="yBox" data-ybox-group="group1">
+                <img src=".././images/common/multiselect.jpg" alt="" width="200" />
+              </a>
+            </div>
+            <div class="code-content mt-3">
+              <code><span class="blue">&lt;a</span> <span class="red">href</span>="<span class="purple">image.jpg</span>" <span class="red">data-ybox-group</span>="<span class="purple">group1</span>" <span class="red">class</span>="<span class="purple">yBox</span>"<span class="blue">&gt; &lt;/a&gt;</span></code>
+            </div>
+            <br>
+            <div class="group-wrap">
+              <a href=".././images/common/pexels-fabian-wiktor-3471423.jpg" class="yBox" data-ybox-group="group2">
+                <img src=".././images/common/pexels-fabian-wiktor-3471423.jpg" alt="" width="200" />
+              </a>
+              <a href=".././images/common/pexels-lukas-590020.jpg" class="yBox" data-ybox-group="group2">
+                <img src=".././images/common/pexels-lukas-590020.jpg" alt="" width="200" />
+              </a>
+              <a href=".././images/common/pexels-picjumbocom-196644.jpg" class="yBox" data-ybox-group="group2">
+                <img src=".././images/common/pexels-picjumbocom-196644.jpg" alt="" width="200" />
+              </a>
+              <a href=".././images/common/pexels-picjumbocom-196645.jpg" class="yBox" data-ybox-group="group2">
+                <img src=".././images/common/pexels-picjumbocom-196645.jpg" alt="" width="200" />
+              </a>
+            </div>
+            <div class="code-content mt-3">
+              <code><span class="blue">&lt;a</span> <span class="red">href</span>="<span class="purple">image.jpg</span>" <span class="red">data-ybox-group</span>="<span class="purple">group2</span>" <span class="red">class</span>="<span class="purple">yBox</span>"<span class="blue">&gt; &lt;/a&gt;</span></code>
+            </div>
+          </section>
+
+
+          <hr class="mt-5 mb-5">
+
+
+          <section class="popup-onload ">
+            <h2>Additional Classes</h2>
+            <a href="#myLink1" data-ybox-class="myYboxClass" class="yBox btn btn-success">Click Me</a>
+            <div  class="d-none">
+              <div id="myLink1" class="inner">
+                Hey - look at me!!
+              </div>
+              
+            </div>
+            <div class="code-content mt-3">
+              <code><span class="blue">&lt;a</span> <span class="red">href</span>="<span class="purple">#myLink</span>" <span class="red">data-ybox-class</span>="<span class="purple">myYboxClass</span>" <span class="red">class</span>="<span class="purple">yBox</span>"<span class="blue">&gt; &lt;/a&gt;</span></code>
+            </div>
+          </section>
+
+
+          <hr class="mt-5 mb-5">
+
+
+          <section class="popup-onload ">
+            <h2>AJAX Popup</h2>
+            <a href="https://www.jqueryscript.net" class="yBox yBox_ajax btn btn-success">Click Me</a>
+            <div id="myLink" style="display:none;">
+              Hey - look at me!!
+            </div>
+            <div class="code-content mt-3">
+              <code><span class="blue">&lt;a</span> <span class="red">href</span>="<span class="purple">https://www.google.com</span>" <span class="red">class</span>="<span class="purple">yBox yBox_ajax</span>"<span class="blue">&gt; &lt;/a&gt;</span></code>
+            </div>
+          </section>
+
+        </div>
+          
+        <!-- END OF THE CONTENT -->           
+        
+        <footer class="main-footer mt-5">
+            <div class="container-fluid bg-color-dgreen pt-5 pb-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 header-logo">
+                            <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                        </div>
+                        <div class="col-md">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+    
+
+
+
+</body>
+<script src="../vendor/modal-popup-ybox/js/directive.min.js"></script>
+<script src="../vendor/modal-popup-ybox/js/yBox.min.js"></script>
+<script> 
+    var yboxContent = "<p> Welcome : This Shows The Popup On Page Load</p>";
+      yBox(yboxContent); 
+</script>
+
+<style>
+  .code-content {
+    background: #fff;
+    border: 2px solid #c2c2c2;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+  }
+   .yBoxFrame {
+    background: #fff;
+    color: #333;
+  }
+  .closeYbox {
+    background: #000;
+    top: -10px;
+    right: -10px;
+    border-radius: 100px;
+    box-shadow: 0 0 5px #e9ecef;
+    border: 2px solid #fff;
+  }
+  .closeYbox::after, .closeYbox::before {
+    width: 21px;
+    height: 2px;
+    top: 15px;
+  }
+  .group-wrap img {
+    height: 200px;
+    width: 250px;
+    object-fit: cover;
+  }
+  .yBoxImgZoom img {
+      max-width: 900px !important;
+  }
+  .yBoxFrame.myYboxClass {
+    min-width: 500px;
+    min-height: 350px;
+    border-radius: 20px;
+  }
+</style>
+
+</html>

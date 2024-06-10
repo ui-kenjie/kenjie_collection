@@ -1,0 +1,548 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>UI Libraries | Animated Headlines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery -->
+  <script src="../vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+  <!-- vendor script -->
+  <script src="../vendor/bootstrap-v4.4.1/js/popper.min.js"></script>
+  <script src="../vendor/bootstrap-v4.4.1/js/bootstrap.min.js"></script>
+
+  <!-- vendor css -->
+  <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap-grid.min.css">
+
+  <!-- fontawesome -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+  <!-- Win Wheel -->
+  <script type="text/javascript" src="../vendor/win-wheel/Winwheel.js"></script>
+  <script src="../vendor/win-wheel/TweenMax.min.js"></script>
+
+  <!-- VENDOR PLUGIN -->
+  <script src="../vendor/swal2/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="../vendor/swal2/sweetalert2.min.css">
+
+  <!-- Style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+  <!-- Main js -->
+      
+        <style>
+          div#canvasContainer {
+            position: relative;
+            display: block;
+            text-align: center;
+            width: fit-content;
+            margin: 0 auto;
+            background-position: center 25px;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+          canvas#canvas {
+              margin: 0 auto;
+              border: 5px solid #000;
+              border-radius: 1000px;
+              padding: 5px !important;
+              background: #e6e2ff;
+          }
+          button#bigButton {
+              display: block;
+              position: absolute;
+              top: -25px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100px;
+              height: 100px;
+              margin: auto;
+              border-radius: 100px;
+              background: radial-gradient(#57a5f1, #0055a7);
+              border: 5px solid #ccc;
+              filter: drop-shadow(0px 0px 19px black);
+              transition: 0.1s all ease-in-out;
+              color: #333;
+          }
+          button#bigButton:hover {
+              filter: drop-shadow(0px 0px 19px #565656);
+              transform: scale(1.02);
+          }
+          button#bigButton[disabled] {
+              filter: drop-shadow(0px 0px 19px #565656);
+              transform: scale(1.02);
+              cursor: not-allowed;
+              color: #333;
+          }
+          a {
+              display: block;
+          }
+          img#prizePointer {
+              position: absolute;
+              width: 55px;
+              margin: -1px auto 0;
+              left: 0;
+              right: 0;
+              transform: rotate(0.5deg);
+              filter: drop-shadow(0px 2px 1px #e6e2ff);
+          }
+          img#wheel-ribbon {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                top: 50%;
+                width: 100%;
+                transform: translate(.0, -50%);
+            }
+            .chosen-block {
+                transition: 0.2s all ease-in-out;
+                background: #740000 !important;
+                color: #fff;
+            }
+            .chosen-block:before {
+                content: '\f0a4';
+                position: absolute;
+                left: -35px;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: #740000;
+                font-size: 25px;
+            }
+            .img-list {
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+            }
+        </style>
+      
+      </head>
+    <body>
+
+        <header class="main-header">
+            <div class="container-fluid bg-color-dgreen pt-3 pb-3">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 header-logo">
+                            <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                        </div>
+                        <div class="col-md">
+                            <ul class=" main-nav m-0 text-uppercase ">
+                                <li class="nav-item">
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle text-white text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Categories</button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a href="#" class="dropdown-item">sample 1</a>
+                                            <a href="#" class="dropdown-item">sample 2</a>
+                                            <a href="#" class="dropdown-item">sample 3</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <form action="#">
+                                        <input type="text" placeholder="Search..." name="search">
+                                        <button type="submit" class="search-btn"><img src="../images/common/search-icon.png" alt=""></button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="mainContent container-fluid pt-5 pr-0 pl-0">
+
+
+            <div class="slidebox-banner">
+                <div class="text-center text-dark">
+                    <h2>Win Wheel - Image per segment</h2>
+                    <p>A feature packed JavaScript library that allows you to easily create spinning 
+                        <br>Prize Wheels on HTML5 canvas using highly configurable JavaScript classes.</p>
+                </div>
+            </div>
+    
+    
+            
+            <!-- MODULES START HERE <<<<<<<<<<<< ---------------------------------------- -->
+    
+    
+            <div class="container">
+                <hr>
+                <div class="row align-items-center">
+                    <div class="col-7">
+                        <div align="center" id="canvasContainer">
+                            <br>
+                            <canvas id="canvas" class="tutCanvas" width="550" height="550" style="padding-top: 10px;">Canvas not supported</canvas>
+                            <img id="prizePointer" src="../images/common/wheelArrow.png" alt="Prize Pointer">
+                            <button id="bigButton" class="bigButton" onclick="calculatePrize();">SPIN</button>
+                            <a class="d-block pt-2 mt-3" href="javascript:void(0);" onclick="resetSpin();">Reset/Stop</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="probability text-left">
+                            <h4 class="text-primary pb-3">Calculate stopAngle before spinning from JS on the page</h4>
+                            <div class="position-relative text-secondary">
+                                <div class="d-block bg-light shadow-sm p-3 pl-4 pr-4 mt-2 percent75">
+                                    <small >75% chance of winning was set for <u>Lollipop</u> <br>and <u>Cookies</u></small >
+                                </div>
+                                <div class="d-block bg-light shadow-sm p-3 pl-4 pr-4 mt-2 percent20">
+                                    <small >20% chance of winning was set for <u>Christmas Tree</u>, <u>Gift</u> and <u>Star</u></small>
+                                </div>
+                                <div class="d-block bg-light shadow-sm p-3 pl-4 pr-4 mt-2 percent5">
+                                   <small> 5% chance of winning was set for the <u>other segment not mentioned above</u> </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <a href="wheel-win.html"><i class="fa fa-solid fa-arrow-left"></i> Calculate the Prize to be won before spinning</a>
+                    <a href="wheel-img.html">Creating a Wheel with an Image <i class="fa fa-solid fa-arrow-right"></i></a>
+                </div>
+                <hr>
+                <div class="images-used">
+                    <p class="text-info">
+                        <i class="fa fa-solid fa-share"></i> List of images used for each segment
+                    </p>
+                    <div class="img-list">
+                        <img src="../images/common/segment-images/seg1.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg2.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg3.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg4.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg5.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg6.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg7.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg8.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg9.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg10.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg11.png" alt="" class="w-100">
+                        <img src="../images/common/segment-images/seg12.png" alt="" class="w-100">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <p class="text-info">
+                        <i class="fa fa-solid fa-share"></i> Default Javascript code of the plugin for setting up the WheelSpin Display
+                    </p>
+                    <code class="bg-dark p-4 w-100">
+                        let theWheel = new Winwheel({ <br>
+                            &nbsp;&nbsp;&nbsp;'numSegments' : 12, //Number of segments <br>
+                            &nbsp;&nbsp;&nbsp;'textFontSize': 16, <br>
+                            &nbsp;&nbsp;&nbsp;'textFillStyle': '#fff', <br>
+                            &nbsp;&nbsp;&nbsp;'strokeStyle': '#e6e2ff', <br>
+                            &nbsp;&nbsp;&nbsp;'lineWidth': 1, <br>
+                            &nbsp;&nbsp;&nbsp;'segments'    : <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;[<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#bb7344', 'text' : 'Segment 1'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#af506a', 'text' : 'Segment 2'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#b94693', 'text' : 'Segment 3'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#6b4eb1', 'text' : 'Segment 4'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#5e85a1', 'text' : 'Segment 5'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#879f60', 'text' : 'Segment 6'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#692bd4', 'text' : 'Segment 7'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#3b32cd', 'text' : 'Segment 8'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#ac9653', 'text' : 'Segment 9'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#8c7378', 'text' : 'Segment 10'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#370013', 'text' : 'Segment 11'}, <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'fillStyle' : '#f90642', 'text' : 'Segment 12'}  <br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;],<br>
+                                &nbsp;&nbsp;'animation' :<br>
+                                &nbsp;{<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;'type'          : 'spinToStop',<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;'duration'      :  8,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;'spins'         :  10,<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;'callbackFinished' : 'alertPrize()'<br>
+                                &nbsp;}<br>
+                        });<br>
+                    </code>
+                </div>
+                <hr>
+                <div class="row mt-4">
+                    <p class="text-info">
+                        <i class="fa fa-solid fa-share"></i> Functions for calculating chances of segment winners.
+                    </p>
+                    <code class="bg-dark p-4 w-100">
+                        function calculatePrize() { <br>
+                            <br>
+                            theWheel.stopAnimation(false)<br>
+                            <br>
+                            // Get the percentage - chances of winning<br>
+                            let cases = {<br>
+                                5 : '5%', // 0-3 : 3  => 3% percent change of winning<br>
+                                25 : '20%', // 4-9 : 6  => 6% percent change of winning<br>
+                                100 : '75%', // 10-100 : 91 => 91% percent change of winning<br>
+                            };<br>
+                            function randomInt(){<br>
+                                // This formula will get random numbers from 1-100<br>
+                                let random = Math.floor(Math.random() * 100);<br>
+                                    for(let prob in cases){<br>
+                                        if(prob>=random){<br>
+                                        return cases[prob];<br>
+                                    }<br>
+                                }<br>
+                            }<br>
+    
+                            // Calculate Winning Angles based of the probability percentage from above cases<br>
+                            // The formula to get random angle of each segment ==>>> Math.floor(Math.random() * (max-min)) + min;<br>
+                            switch (randomInt()) {<br>
+                                case '75%':<br>
+                                    segment1 = Math.floor(Math.random() * 30);<br>
+                                    segment12 = Math.floor(Math.random() * 29) + 331;<br>
+                                    segmentArray = [segment1, segment12];<br>
+                                    randomSegment = Math.floor(Math.random() * segmentArray.length);<br>
+                                    randomResult = segmentArray[randomSegment];<br>
+                                    <br>
+                                    
+                                    prizePercent = '75%';<br>
+                                    break;<br>
+                                case '20%':<br>
+                                    segment2 = Math.floor(Math.random() * 29) + 31;<br>
+                                    segment3 = Math.floor(Math.random() * 29) + 61;<br>
+                                    segment4 = Math.floor(Math.random() * 29) + 91;<br>
+                                    segmentArray = [segment3, segment4, segment2];<br>
+                                    randomSegment = Math.floor(Math.random() * segmentArray.length);<br>
+                                    randomResult = segmentArray[randomSegment];<br>
+                                    <br>
+                                    
+                                    prizePercent = '20%';<br>
+                                    break;<br>
+                                case '5%':<br>
+                                    segment5 = Math.floor(Math.random() * 29) + 121;<br>
+                                    segment6 = Math.floor(Math.random() * 29) + 151;<br>
+                                    segment7 = Math.floor(Math.random() * 29) + 181;<br>
+                                    segment8 = Math.floor(Math.random() * 29) + 211;<br>
+                                    segment9 = Math.floor(Math.random() * 29) + 241;<br>
+                                    segment10 = Math.floor(Math.random() * 29) + 271;<br>
+                                    segment11 = Math.floor(Math.random() * 29) + 301;<br>
+                                    segmentArray = [segment5, segment6, segment7, segment8, segment9, segment10, segment11];<br>
+                                    randomSegment = Math.floor(Math.random() * segmentArray.length);<br>
+                                    randomResult = segmentArray[randomSegment];<br>
+                                    <br>
+                            }<br>
+                            <br>
+                            // Getting the winner angle base from percentage and cases above<br>
+                            let stopAt = randomResult;<br>
+                            <br>
+                            // Important thing is to set the stopAngle of the animation before stating the spin.<br>
+                            theWheel.animation.stopAngle = stopAt;<br>
+                            <br>
+                            // May as well start the spin from here.<br>
+                            theWheel.rotationAngle=0;<br>
+                            theWheel.startAnimation();<br>
+                        }
+                    </code>
+                </div>
+                <hr>
+                <div class="row mt-4">
+                    <p class="text-info">
+                        <i class="fa fa-solid fa-share"></i> Functions of alert prize and resetSpin button. Can be integrated with any other modal popup plugin.
+                        <br>On this code, i use Swal plugin for winner popup modal
+                    </p>
+                    <code class="bg-dark p-4 w-100">
+                        function alertPrize() {<br>
+                            // Call getIndicatedSegment() function to return pointer to the segment pointed to on wheel.<br>
+                            let winningSegment = theWheel.getIndicatedSegment();<br>
+                            <br>
+                            // Basic alert of the segment text which is the prize name.<br>
+                            Swal.fire(<br>
+                                    'You won <u class="text-danger">' + winningSegment.text + '</u>!',<br>
+                                    '',<br>
+                                    'success'<br>
+                            )<br>
+                            bigButton.disabled=false;<br>
+                        }<br>
+                        <br>
+                        function resetSpin() {<br>
+                            let stopAt = 0;<br>
+                            theWheel.stopAnimation(false); <br>
+                            bigButton.disabled=false;<br>
+                        }<br>
+                    </code>
+                </div>
+            </div>
+            <div class="pageSource container mt-4">
+                <a href="http://dougtesting.net/" target="_blank"><u>Plugin Source: http://dougtesting.net/</u></a>
+            </div>
+    
+            <!-- MODULES ENDS HERE <<<<<<<<<<<< ---------------------------------------- -->
+    
+            <footer class="main-footer mt-5">
+                <div class="container-fluid bg-color-dgreen pt-5 pb-5">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 header-logo">
+                                <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                            </div>
+                            <div class="col-md">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    
+    
+        </div>
+        <script>
+            // Create new wheel object specifying the parameters at creation time.
+            let theWheel = new Winwheel({
+                'numSegments'       : 12,                 // Specify number of segments.
+                'outerRadius'       : 200,                // Set outer radius so wheel fits inside the background.
+                'drawText'          : true,              // Code drawn text can be used with segment images.
+                'textFontSize'      : 14,
+                // 'textOrientation'   : 'curved',
+                'textAlignment'     : 'inner',
+                'textMargin'        : 90,
+                'strokeStyle'       : '#000',
+                'lineWidth'         : 5,
+                'drawMode'          : 'segmentImage',     // Must be segmentImage to draw wheel using one image per segemnt.
+                'segments'          :                     // Define segments including image and text.
+                [
+                   {'image' : '../images/common/segment-images/seg1.png', 'text' : 'Lollipop'},    // SEGMENT 1
+                   {'image' : '../images/common/segment-images/seg2.png', 'text' : 'Christmas Tree'}, // SEGMENT 2
+                   {'image' : '../images/common/segment-images/seg3.png', 'text' : 'Gift'}, // SEGMENT 3
+                   {'image' : '../images/common/segment-images/seg4.png', 'text' : 'Star'}, // SEGMENT 4
+                   {'image' : '../images/common/segment-images/seg5.png', 'text' : 'Santa Claus'}, // SEGMENT 5
+                   {'image' : '../images/common/segment-images/seg6.png', 'text' : 'Santa Hat'}, // SEGMENT 6
+                   {'image' : '../images/common/segment-images/seg7.png', 'text' : 'Socks'},  // SEGMENT 7
+                   {'image' : '../images/common/segment-images/seg8.png', 'text' : 'Raindeer'},  // SEGMENT 8
+                   {'image' : '../images/common/segment-images/seg9.png', 'text' : 'Bells'},  // SEGMENT 9
+                   {'image' : '../images/common/segment-images/seg10.png', 'text' : 'Christmas Balls'},  // SEGMENT 10
+                   {'image' : '../images/common/segment-images/seg11.png', 'text' : 'Ribbon'},  // SEGMENT 11
+                   {'image' : '../images/common/segment-images/seg12.png', 'text' : 'Cookies'}  // SEGMENT 12
+                ],
+                'animation' :           // Specify the animation to use.
+                {
+                    'type'     : 'spinToStop',
+                    'duration' : 7,     // Duration in seconds.
+                    'spins'    : 5,     // Number of complete spins.
+                    'callbackFinished' : 'alertPrize()'
+                }
+            });
+
+                // Function with formula to work out stopAngle before spinning animation.
+                // Called from Click of the Spin button.
+                function calculatePrize() {
+    
+                    theWheel.stopAnimation(false)
+
+                    // Get the percentage - chances of winning
+                    let cases = {
+                        5 : '5%', // 0-3 : 3  => 3% percent change of winning
+                        25 : '20%', // 4-9 : 6  => 6% percent change of winning
+                        100 : '75%', // 10-100 : 91 => 91% percent change of winning
+                    };
+                    function randomInt(){
+                        // This formula will get random numbers from 1-100
+                        let random = Math.floor(Math.random() * 100);
+                            for(let prob in cases){
+                                if(prob>=random){
+                                return cases[prob];
+                            }
+                        }
+                    }
+
+                    
+
+                    // Calculate Winning Angles based of the probability percentage from above cases
+                    // The formula to get random angle of each segment ==>>> Math.floor(Math.random() * (max-min)) + min;
+                    switch (randomInt()) {
+                        case '75%':
+                            segment1 = Math.floor(Math.random() * 30);
+                            segment12 = Math.floor(Math.random() * 29) + 331;
+                            segmentArray = [segment1, segment12];
+                            randomSegment = Math.floor(Math.random() * segmentArray.length);
+                            randomResult = segmentArray[randomSegment];
+
+                            // THIS WAS ADDEDD FOR UI DISPLAY ONLY
+                            prizePercent = '75%';
+                            break;
+                        case '20%':
+                            segment2 = Math.floor(Math.random() * 29) + 31;
+                            segment3 = Math.floor(Math.random() * 29) + 61;
+                            segment4 = Math.floor(Math.random() * 29) + 91;
+                            segmentArray = [segment3, segment4, segment2];
+                            randomSegment = Math.floor(Math.random() * segmentArray.length);
+                            randomResult = segmentArray[randomSegment];
+                            
+                            // THIS WAS ADDEDD FOR UI DISPLAY ONLY
+                            prizePercent = '20%';
+                            break;
+                        case '5%':
+                            segment5 = Math.floor(Math.random() * 29) + 121;
+                            segment6 = Math.floor(Math.random() * 29) + 151;
+                            segment7 = Math.floor(Math.random() * 29) + 181;
+                            segment8 = Math.floor(Math.random() * 29) + 211;
+                            segment9 = Math.floor(Math.random() * 29) + 241;
+                            segment10 = Math.floor(Math.random() * 29) + 271;
+                            segment11 = Math.floor(Math.random() * 29) + 301;
+                            segmentArray = [segment5, segment6, segment7, segment8, segment9, segment10, segment11];
+                            randomSegment = Math.floor(Math.random() * segmentArray.length);
+                            randomResult = segmentArray[randomSegment];
+
+                            // THIS WAS ADDEDD FOR UI DISPLAY ONLY
+                            prizePercent = '5%';
+                            break;
+                    }
+
+                    // Getting the winner angle base from percentage and cases above
+                    let stopAt = randomResult;
+                    
+                    // Important thing is to set the stopAngle of the animation before stating the spin.
+                    theWheel.animation.stopAngle = stopAt;
+
+                    // May as well start the spin from here.
+                    theWheel.rotationAngle=0;
+                    theWheel.startAnimation();
+                    bigButton.disabled=true;
+                    prizeIs();
+                }
+    
+                function alertPrize() {   
+                    let winningSegment = theWheel.getIndicatedSegment();
+                    // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+                    bigButton.disabled=false;
+                    Swal.fire(
+                            'You won <u class="text-danger">' + winningSegment.text + '</u>!',
+                            '',
+                            'success'
+                    )
+                }
+             
+                function resetSpin() {
+                    let stopAt = 0;
+                    theWheel.stopAnimation(false); 
+                    bigButton.disabled=false;
+                    theWheel.draw();  
+                }
+
+                const drawImages = setTimeout(resetSpin, 100);
+
+
+                function prizeIs() {
+                    
+                    switch (prizePercent) {
+                        case '75%':
+                            $('.percent75').addClass('chosen-block');
+                            $('.percent20').removeClass('chosen-block');
+                            $('.percent5').removeClass('chosen-block');
+                            break;
+                        case '20%':
+                            $('.percent75').removeClass('chosen-block');
+                            $('.percent20').addClass('chosen-block');
+                            $('.percent5').removeClass('chosen-block');
+                            break;
+                        case '5%':
+                            $('.percent75').removeClass('chosen-block');
+                            $('.percent20').removeClass('chosen-block');
+                            $('.percent5').addClass('chosen-block');
+                            break;
+                    }
+                }
+   
+        </script>
+    </body>
+</html>

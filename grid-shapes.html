@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Grid and Custom Shapes</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- jQuery -->
+    <script src="vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+    <!-- vendor script -->
+    <script src="vendor/bootstrap-v5.2.3/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/aos/js/aos.js"></script>
+
+    <!-- dragdrop Plugin-->
+    <script src="vendor/wijmo/js/drag_drop_touch.js"></script>
+  
+    <!-- vendor css -->
+    <link rel="stylesheet" href="vendor/aos/css/aos.css">
+    <link rel="stylesheet" href="vendor/bootstrap-v5.2.3/css/bootstrap.min.css">
+  
+    <!-- Style CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/pages/grid-shapes.css">
+    <!-- Main js -->
+    
+</head>
+<body><!-- main wrapper -->
+
+
+
+
+    <div class=" pt-4 pb-4">
+
+        <h1 class="text-center text-dark fw-bold">Understanding CSS Grid & Shapes</h1>
+
+        <div class="layout-container gallery container d-flex justify-content-center text-dark gap-5 mt-4">
+            <div>
+                <span>Normal Gallery</span>
+                <div class="gallery1-nonshaped">
+                    <img src="images/common/grid-shapes/img-1.jpg" >
+                    <img src="images/common/grid-shapes/img-2.jpg">
+                    <img src="images/common/grid-shapes/img-3.jpg" >
+                    <img src="images/common/grid-shapes/img-4.jpg" >
+                </div>
+            </div>
+            <div>
+                <span>Applying css grid and custom shapes</span>
+                <div class="gallery1-shaped">
+                    <img src="images/common/grid-shapes/img-1.jpg" >
+                    <img src="images/common/grid-shapes/img-2.jpg">
+                    <img src="images/common/grid-shapes/img-3.jpg" >
+                    <img src="images/common/grid-shapes/img-4.jpg" >
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-container gallery1-explain container text-light mt-4 bg-dark rounded-3 mx-auto p-4">
+            <p>If we open DevTools and inspect our declaration: <code>grid-area: 1/2/span 2/span 2;</code> </p>
+            <p class="mb-0">…that is the same as writing all this out:</p>
+            <code>
+                grid-row-start: 1; /* 1st row */ <br>
+                grid-column-start: 2; /* 2nd column */ <br>
+                grid-row-end: span 2; /* take 2 rows */ <br>
+                grid-column-end: span 2; /* take 2 columns */ <br>
+            </code>
+            <img src="images/common/grid-shapes/img-expl2.jpg" alt="" class="d-block">
+            <p>the second and third images are overlapped in the middle. Purposely spanned them on top of one another so that we can apply a clip-path to cut a portion from each one and get the final result:</p>
+            <img src="images/common/grid-shapes/img-expl.jpg" alt="" class="d- mb-2">
+            <code >
+                <span class="text-white d-block">(img:nth-child(2)) with the CSS clip-path property:</span>
+                clip-path: polygon(0 0, 100% 0, 100% 100%, calc(50% + var(5px) / 4) 100%, 0 calc(50% - var(5px) / 4))
+                <span class="text-white d-block">And the top-right corner of the third one:</span>
+                clip-path: polygon(0 0, calc(50% - var(5px) / 4) 0, 100% calc(50% + var(5px) / 4), 100% 100%, 0 100%);
+            </code>
+        </div>
+
+        <div class="layout-container gallery container d-flex justify-content-center text-dark gap-5 mt-4">
+            <div>
+                <span>Other examples</span>
+                <div class="gallery2-nonshaped">
+                    <img src="images/common/grid-shapes/flowers-1.jpg" alt="">
+                    <img src="images/common/grid-shapes/flowers-2.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <span class="d-block text-center">After Applying css grids and shapes</span>
+                <div class="gallery2-shaped justify-content-center">
+                    <img src="images/common/grid-shapes/flowers-1.jpg" alt="">
+                    <img src="images/common/grid-shapes/flowers-2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-container gallery container d-flex justify-content-center text-dark gap-5 mt-4">
+            <div>
+                <span>Other examples</span>
+                <div class="gallery3-nonshaped">
+                    <img src="images/common/grid-shapes/circ-1.jpg" alt="">
+                    <img src="images/common/grid-shapes/circ-2.jpg" alt="">
+                    <img src="images/common/grid-shapes/circ-3.jpg" alt="">
+                    <img src="images/common/grid-shapes/circ-4.jpg" alt="">
+                </div>
+            </div>
+            <div>
+                <span class="d-block text-center">After Applying css grids and shapes</span>
+                <div class="gallery3-shaped justify-content-center">
+                    <img src="images/common/grid-shapes/circ-1.jpg" alt="">
+                    <img src="images/common/grid-shapes/circ-2.jpg" alt="">
+                    <img src="images/common/grid-shapes/circ-3.jpg" alt="">
+                    <img src="images/common/grid-shapes/circ-4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <span class="d-block text-center text-dark mt-5">Other examples</span>
+        <div class="gallery4 container mt-2">
+            <img src="images/common/grid-shapes/rect-1.jpg" alt="">
+            <img src="images/common/grid-shapes/rect-2.jpg" alt="">
+            <img src="images/common/grid-shapes/rect-3.jpg" alt="">
+            <img src="images/common/grid-shapes/rect-4.jpg" alt="">
+            <img src="images/common/grid-shapes/rect-5.jpg" alt="">
+          </div>
+
+    </div>
+
+         
+                            
+
+</body>
+
+<script>
+
+</script>
+</html>

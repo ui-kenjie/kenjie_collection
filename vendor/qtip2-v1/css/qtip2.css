@@ -1,0 +1,75 @@
+.qtip-hover, .qtip-click, [qtip-guide] {
+    position: relative;
+    display: inline ;
+}
+.qtip-hover *, .qtip-click *, [qtip-guide] * {
+    display: block;
+}
+.bg-fixed {
+    position: fixed;
+    background: rgb(0 0 0 / 75%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+}
+.qtip-modal {
+    position: absolute;
+    z-index: 99;
+}
+.qtip-modal .content {
+    background: #000;
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    color: #fff;
+    font-size: 14px;
+    z-index: 999;
+    position: relative;
+}
+.qtip-modal .content:after {
+    content: '';
+    position: absolute;
+    margin: 0 auto;
+}
+.qtip-top .qtip-modal .content:after, .qtip-default .qtip-modal .content:after {
+    border-width: 10px;
+    border-style: solid;
+    bottom: -17px;
+    left: 50%;
+    border-color: #000 transparent transparent transparent;
+    transform: scaleX(1.7);
+}
+.qtip-right .qtip-modal .content:after {
+    border-width: 10px;
+    border-style: solid;
+    top: 8%;
+    left: -10%;
+    border-color:  transparent #000 transparent transparent ;
+    transform: scaleX(1.7) rotatex(52deg) rotateY(35deg);
+}
+.qtip-left .qtip-modal .content:after {
+    border-width: 10px;
+    border-style: solid;
+    top: 8%;
+    right: -10%;
+    border-color:  transparent transparent transparent #000 ;
+    transform: scaleX(1.7) rotatex(-52deg) rotateY(35deg);
+}
+.qtip-bottom .qtip-modal .content:after {
+    border-width: 10px;
+    border-style: solid;
+    top: -17px;
+    left: 50%;
+    border-color: transparent transparent #000  transparent;
+    transform: scaleX(1.7);
+}
+.qtip-modal .content.left:after {
+    border-width: 10px;
+    border-style: solid;
+    top: 8%;
+    right: -10%;
+    border-color:  transparent transparent transparent #fff ;
+    transform: scaleX(1.7) rotatex(-52deg) rotateY(35deg);
+}

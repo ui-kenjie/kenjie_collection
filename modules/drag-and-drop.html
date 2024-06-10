@@ -1,0 +1,283 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>UI Libraries | Drag and Drop</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- jQuery -->
+    <script src="../vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+    <!-- vendor script -->
+    <script src="../vendor/bootstrap-v4.4.1/js/popper.min.js"></script>
+    <script src="../vendor/bootstrap-v4.4.1/js/bootstrap.min.js"></script>
+    <script src="../vendor/aos/js/aos.js"></script>
+
+    <!-- dragdrop Plugin-->
+    <script src="../vendor/wijmo/js/drag_drop_touch.js"></script>
+  
+    <!-- vendor css -->
+    <link rel="stylesheet" href="../vendor/aos/css/aos.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap-grid.min.css">
+  
+    <!-- Style CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <!-- Main js -->
+    
+</head>
+<body><!-- main wrapper -->
+
+
+    <header class="main-header">
+        <div class="container-fluid bg-color-dgreen pt-3 pb-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                    </div>
+                    <div class="col-md">
+                        <ul class=" main-nav m-0 text-uppercase ">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle text-white text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Categories</button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a href="#" class="dropdown-item">sample 1</a>
+                                        <a href="#" class="dropdown-item">sample 2</a>
+                                        <a href="#" class="dropdown-item">sample 3</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <form action="#">
+                                    <input type="text" placeholder="Search..." name="search">
+                                    <button type="submit" class="search-btn"><img src="../images/common/search-icon.png" alt=""></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="dragdrop-mainContent pt-4 pb-4">
+
+        <!-- Start of draggable items - drag and drop to arrange the order -->
+        <div class="container-fluid draggable-item">
+            <div class="container mt-4 mb-4">
+                <div class="pb-3">
+                    <h2 class="text-dgreen text-uppercase text-center">Click and Drag to arrange the order of the teams below</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md row align-items-center">
+                        <div class="col-3">
+                            <img src="../images/common/logos/01.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/01-sydney-sixers.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/02.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/02-adelaide-strikers.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/03.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/03-brisbane-heat.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/04.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/04-perth-scorchers.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/05.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/05-melbourne-stars.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/06.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/06-hobart-hurricanes.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/07.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/07-melbourne-renegades.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                    <div class="col-md row align-items-center">
+                        <div class="col-3 ">
+                            <img src="../images/common/logos/08.png" alt="" class="w-100">
+                        </div>
+                        <div class="col column-drop">
+                            <img src="../images/common/logos/08-sydney-thunder.jpg" alt="" class="w-100 draggable" draggable="true">
+                        </div>
+                    </div>
+                    <div class="col-md row align-items-center">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END OF DRAG AND DROP TEAMS -->
+
+
+
+        <!-- START OF DRAGGABLE SORTING TEAMS -->
+        <div class="container mt-5 mb-4">
+            <div class="pb-3">
+                <h2 class="text-dgreen text-uppercase text-center">Sorting teams to winner and loser</h2>
+            </div>
+            <div class="row">
+                <div class="col-2 d-none d-md-block"></div>
+                <div class="col drop-box winning-col">
+                    <img src="../images/common/logos/01-sydney-sixers.jpg" alt="" class="w-100 mt-2 droppable" draggable="true">
+                    <img src="../images/common/logos/02-adelaide-strikers.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                    <img src="../images/common/logos/03-brisbane-heat.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                    <img src="../images/common/logos/04-perth-scorchers.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                    <img src="../images/common/logos/05-melbourne-stars.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                    <img src="../images/common/logos/06-hobart-hurricanes.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                    <img src="../images/common/logos/07-melbourne-renegades.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                    <img src="../images/common/logos/08-sydney-thunder.jpg" alt="" class="w-100 mt-2  droppable" draggable="true">
+                </div>
+                <div class="col drop-box loosing-col">
+                    
+                </div>
+                <div class="col-2 d-none d-md-block"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class="main-footer">
+        <div class="container-fluid bg-color-dgreen pt-5 pb-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                    </div>
+                    <div class="col-md">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+                            
+                            
+
+</body>
+
+<script>
+        var droppableImg = $('.droppable');   //  ADD "droppable" to the class of the image
+        var colChoice = $('.drop-box');  //  ADD "drop-box" to the div of the sorting column
+        var dragcolChoice = null;
+
+        for (var h of droppableImg) {
+            h.addEventListener('dragstart', dragStartforDrop);
+            h.addEventListener('dragend', dragEndforDrop);
+        }
+        function dragStartforDrop() {
+            dragcolChoice = this;
+            setTimeout(()=>this.style.display = "none", 0);
+        }
+        function dragEndforDrop() {
+            setTimeout(()=>this.style.display = "block", 0);
+            dragcolChoice = null;
+        }
+        for (o of colChoice) {
+            o.addEventListener('dragover', dragOverforDrop);
+            o.addEventListener('dragenter', dragEnterforDrop);
+            o.addEventListener('dragleave', dragLeaveforDrop);
+            o.addEventListener('drop', DropforDrop);
+        }
+        function DropforDrop(e) {
+            e.preventDefault();
+            $(this).css('border', '2px solid #000')
+            this.prepend(dragcolChoice)
+        }
+        function dragOverforDrop(e) {
+            e.preventDefault();
+            $(this).css('border', '2px dashed #000')
+        }
+        function dragEnterforDrop(e) {
+            e.preventDefault();
+        }
+        function dragLeaveforDrop() {
+            $(this).css('border', '2px solid #000')
+        }
+
+
+        // DRAG AND DROP CHANGE PLACE  ====================================================================
+        var img = $('.draggable');   //  ADD "draggable" to the class of the image
+        var choice = $('.column-drop');  //  ADD "column-drop" to the div of the image
+        var dragItem = null;
+    
+        for (var i of img) {
+            i.addEventListener('dragstart', dragStart);
+            i.addEventListener('dragend', dragEnd);
+        }
+        function dragStart() {
+            dragItem = this;
+            setTimeout(()=>this.style.opacity = "0.5", 0);
+        }
+        function dragEnd() {
+            setTimeout(()=>this.style.opacity = "1", 0);
+            dragItem = null;
+        }
+        for (j of choice) {
+            j.addEventListener('dragover', dragOver);
+            j.addEventListener('dragenter', dragEnter);
+            j.addEventListener('dragleave', dragLeave);
+            j.addEventListener('drop', Drop);
+        }
+        function Drop(e) {
+            e.preventDefault();
+            $(this).children(img).removeClass('dragoverBorder');
+            var item2 = $(this).children(img).attr('src');
+            var item = $(dragItem).attr('src');
+            $(this).children(img).attr('src', item).css('filter', 'grayscale(0)');
+            $(dragItem).attr('src', item2).css('filter', 'grayscale(0)');
+        }
+        function dragOver(e) {
+            e.preventDefault();
+            $(this).children(img).addClass('dragoverBorder');
+        }
+        function dragEnter(e) {
+            e.preventDefault();
+        }
+        function dragLeave() {
+            $(this).children(img).removeClass('dragoverBorder');
+        }
+    </script>
+</html>

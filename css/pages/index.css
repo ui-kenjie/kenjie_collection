@@ -1,0 +1,112 @@
+body.home.body.multi-step {
+    background: url(../../images/common/connected.png);
+    background-position: center;
+    background-repeat: repeat;
+    background-color: rgb(0 30 38 / 26%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.bg-color-dgreen {
+    background-color: var(--dark-green);
+}
+.tile:hover {
+    box-shadow: 0 40px 40px -20px rgb(0 30 38 / 75%);
+}
+.tile {
+    background: #fcfcfc;
+    box-shadow: 0 20px 20px -20px rgb(0 30 38 / 50%);
+    transition: 0.1s all ease-in-out;
+    cursor: pointer;
+    height: 100%;
+}
+.tile-content {
+    padding: 20px;
+}
+.plugin-container img {
+    height: 200px;
+    object-fit: cover;
+}
+.plugin-container {
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    position: relative;
+    min-height: 90vh;
+}
+.plugin-container .plugin-list {
+    position: relative;
+    transition: 0.3s all ease-in-out;
+    transform: rotateY(360deg);
+}
+.plugin-container .plugin-list:nth-child(1) {
+    top: 50%;
+    left: 102.7%;
+}
+.plugin-container .plugin-list:nth-child(2) {
+    top: 50%;
+    left: 0;
+}
+.plugin-container .plugin-list:nth-child(3) {
+    top: 50%;
+    left: -102.7%;
+}
+.plugin-container .plugin-list:nth-child(4) {
+    top: -50%;
+    left: 102.7%;
+}
+.plugin-container .plugin-list:nth-child(5) {
+    top: -50%;
+    left: 0;
+}
+.plugin-container .plugin-list:nth-child(6) {
+    top: -50%;
+    left: -102.7%;
+}
+.plugin-container .plugin-list:nth-child(7) {
+    top: -155%;
+    left: 102.7%;
+}
+.plugin-container .plugin-list:nth-child(8) {
+    top: -155%;
+    left: 0;
+}
+
+@media screen and (max-width: 320px) {
+
+
+}
+
+@media screen and (min-width: 768px) {
+    
+    body {
+        font-size: 16px;
+    }
+    .plugin-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .plugin-container img {
+        height: 235px;
+    }
+    
+}
+
+@media screen and (min-width: 991px) {
+
+    .plugin-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    
+    body {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+
+    
+}

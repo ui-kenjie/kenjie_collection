@@ -1,0 +1,276 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>UI Libraries | jQuery qTip</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <!-- jQuery -->
+    <script src="../vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+    <!-- MultiSelect -->
+    <link rel="stylesheet" href="../vendor/qtip2-v1/css/qtip2.css">
+    <script src="../vendor/qtip2-v1/js/qtip2.js"></script>
+    <!-- vendor script -->
+    <script src="../vendor/bootstrap-v4.4.1/js/popper.min.js"></script>
+    <script src="../vendor/bootstrap-v4.4.1/js/bootstrap.min.js"></script>
+    <script src="../vendor/aos/js/aos.js"></script>
+    <script src="../vendor/animatedheadlines/js/animatedheadlines.js"></script>
+
+    <!-- FONTAWESEOME -->
+    <link rel="stylesheet" href="../vendor/fontawesome/css/all.min.css">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="../vendor/aos/css/aos.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../vendor/animatedheadlines/css/animatedheadlines.css">
+    <!-- Style CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <!-- Main js -->
+    
+</head>
+<body><!-- main wrapper -->
+
+
+    <header class="main-header">
+        <div class="container-fluid bg-color-dgreen pt-3 pb-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">jQuery qTip2</a></h2>
+                    </div>
+                    <div class="col-md">
+                        <ul class=" main-nav m-0 text-uppercase ">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle text-white text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Categories</button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a href="#" class="dropdown-item">sample 1</a>
+                                        <a href="#" class="dropdown-item">sample 2</a>
+                                        <a href="#" class="dropdown-item">sample 3</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <form action="#">
+                                    <input type="text" placeholder="Search..." name="search">
+                                    <button type="submit" class="search-btn"><img src="../images/common/search-icon.png" alt=""></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="body-mainContent qtip-mainContent pt-4 pb-4 ">
+
+        <div class="multiselect-banner">
+            <div class="text-center">
+                <img src="../images/common/qt-logo.png" alt="SLIDE BOX icon/logo" class="page-logo" >
+                <h2>jQuery qTip</h2>
+                <p class="text-center">
+                    The second generation of the advanced qTip plugin and provides tooltip helps to html elements and for the ever popular jQuery framework,<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="container pt-4">
+            <div class="rowheading text-center">
+                <div class="text-uppercase" animate="textShadow">tooltip on hover</div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="qtip-hover qtip-top" >  <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on top</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="1" qtip-guide="Use this html tags for tooltip on top of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-hover qtip-top" >
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on top</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="qtip-hover qtip-right"> <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on right</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="2" qtip-guide="Use this html tags for tooltip to the RIGHT of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-hover qtip-right"> 
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on right</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="qtip-hover qtip-bottom"> <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on bottom</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="3" qtip-guide="Use this html tags for tooltip to the BOTTOM of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-hover qtip-bottom"> 
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on bottom</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="qtip-hover qtip-left"> <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on left</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="4" qtip-guide="Use this html tags for tooltip to the LEFT of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-hover qtip-left"> 
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Tooltip on left</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-4">
+            <div class="rowheading text-center">
+                <div class="text-uppercase" animate="translateX">tooltip on click</div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="qtip-click qtip-top" >  <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip top</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="5" qtip-guide="Use this html tags for tooltip to the top of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-click qtip-top" >
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip top</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="qtip-click qtip-right"> <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip right</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="6" qtip-guide="Use this html tags for tooltip to the RIGHT of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-click qtip-right"> 
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip right</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="qtip-click qtip-bottom"> <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip bottom</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="7" qtip-guide="Use this html tags for tooltip to the bottom of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-click qtip-bottom"> 
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip bottom</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="qtip-click qtip-left"> <!--add qtip class to the div container of the element to trigger qtip plugin-->
+                    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip left</button>
+                    </div><br>&nbsp;
+                    <div class="text-code pt-3" qtip-guide-step="8" qtip-guide="Use this html tags for tooltip to the left of element">
+                        <textarea name="" id="" class="w-100 text-left bg-dark border-0 text-white" rows="">
+<div class="qtip-click qtip-left"> 
+    <button type="button" class="btn btn-primary w-100" data-help-content="This is tooltip //insert content here">Click me tooltip left</button>
+</div>
+                        </textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="container pt-4 pb-4 pl-3 pr-3">
+        <div class="rowheading text-center">
+            <div class="text-uppercase" animate="color">tooltip on GUIDE</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md">
+                <button type="button" class="btn btn-primary w-100" help-qtip-btn>Click me for Tooltip Guide</button>
+                <p class="small-font">
+                    Adding <strong>qtip-guide-step='1'</strong>  and <strong>qtip-guide='//insert content here'</strong> attribute to your container <br>
+                    then add <strong>help-qtip-btn</strong> attribute to your tooltip guide button to trigger modal tooltip guide
+                </p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container-fluid bg-color-dgreen pt-5 pb-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                    </div>
+                    <div class="col-md">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+                            
+    
+
+      
+
+</body>
+<style>
+    
+    
+    .main-footer {
+        position: absolute;
+        width: 100%;
+    }
+    textarea {
+        min-height: 150px;
+        font-size: 14px;
+    }
+    .small-font {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+</style>
+<script>
+
+    $(document).ready(function(){
+
+        $('.glyphicon-ok').append('<i class="fas fa-check"></i>')
+        var bodyHeight = $('body').height();
+        var windowHeight = $(window).height();
+        var footerHeight = $('.main-footer').height();
+        var headerHeight = $('.main-header').height();
+        if (bodyHeight+footerHeight < windowHeight) {
+            $('footer.main-footer').css('bottom', '0' );
+        }
+        else if (bodyHeight > windowHeight) {
+            $('footer.main-footer').css('top',bodyHeight + 100);
+        }
+        $('body').css({
+            'padding-bottom': footerHeight + 'px'
+        });
+    });
+</script>
+</html>

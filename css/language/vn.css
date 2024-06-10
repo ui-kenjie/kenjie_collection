@@ -1,0 +1,13 @@
+/*Here is only for vn language */
+
+body, 
+.mainBannerText p,
+.mainBannerText p span,
+.participate-form form,
+.participate-form p,
+.eventsCotainer-container .content-title,
+.table-bordered,
+.termsAndCondition-container,
+.termsAndCondition-container ol li {
+    font-family: 'Tahoma';
+}

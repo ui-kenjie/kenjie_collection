@@ -1,0 +1,93 @@
+
+
+.headlines-container {
+    position: relative;
+    padding: 40px 20px;
+}
+[animate] {
+    font-size: 1.5em;
+    font-weight: 900;
+    display: block;
+    overflow: hidden;
+}
+[animate] span {
+    transition: 0.5s all ease-in-out;
+    display: inline-block;
+    overflow: hidden;
+}
+[animate] span.animate-rotateFirst {
+    transform: rotate(360deg);
+}
+[animate] span.animate-rotateSecond {
+    transform: rotate(0deg);
+}
+
+[animate] span.animate-rotateYFirst {
+    transform: rotateY(360deg);
+}
+[animate] span.animate-rotateYSecond {
+    transform: rotateY(0deg);
+}
+
+[animate] span.animate-rotateXFirst {
+    transform: rotateX(360deg);
+}
+[animate] span.animate-rotateXSecond {
+    transform: rotateX(0deg);
+}
+
+[animate] span.animate-skewYFirst {
+    transform: skewY(180deg);
+}
+[animate] span.animate-skewYSecond{
+    transform: skewY(0deg);
+}
+
+[animate] span.animate-skewXFirst {
+    transform: skewX(180deg);
+}
+[animate] span.animate-skewXSecond{
+    transform: skewX(0deg);
+}
+
+[animate] span.animate-scaleXFirst {
+    transform: scaleX(1.8);
+}
+[animate] span.animate-scaleXSecond{
+    transform: scaleX(1);
+}
+
+[animate] span.animate-scale3dFirst{
+    transform: scale3d(1.5, 1.5, 1.5);
+}
+[animate] span.animate-scale3dSecond{
+    transform: scale3d(1, 1, 1);
+}
+
+[animate] span.animate-translateXFirst{
+    transform: translateX(20px);
+}
+[animate] span.animate-translateXSecond{
+    transform: translateX(0px);
+}
+
+[animate] span.animate-colorFirst{
+    color: grey;
+}
+[animate] span.animate-colorSecond{
+    color: inherit;
+}
+
+[animate] span.animate-textShadowFirst{
+    text-shadow: 0 0 10px #333;
+}
+[animate] span.animate-textShadowSecond{
+    text-shadow: 0 0 0px #333;
+}
+
+
+@media screen and (min-width: 768px) {
+    [animate] {
+        font-size: 2.5em;
+    }
+}

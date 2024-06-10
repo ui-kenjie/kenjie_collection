@@ -1,0 +1,366 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>UI Libraries | jQuery Multi-Step</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- jQuery -->
+  <script src="../vendor/jquery-v3.4.1/jQuery.v3.4.1.js"></script>
+  <!-- vendor script -->
+  <script src="../vendor/bootstrap-v4.4.1/js/popper.min.js"></script>
+  <script src="../vendor/bootstrap-v4.4.1/js/bootstrap.min.js"></script>
+  <script src="../vendor/aos/js/aos.js"></script>
+
+  <!-- vendor css -->
+  <link rel="stylesheet" href="../vendor/aos/css/aos.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../vendor/bootstrap-v4.4.1/css/bootstrap-grid.min.css">
+
+
+
+  <!-- VENDOR PLUGIN -->
+  <link rel="stylesheet" href="../vendor/datetimepicker-master/jquery.datetimepicker.css">
+  <script src="../vendor/datetimepicker-master/build/jquery.datetimepicker.full.min.js"></script>
+
+  <!-- SPARKLING -->
+  <link rel="stylesheet" href="../vendor/sparklings/SparklingStars.css">
+  <script src="../vendor/sparklings/SparklingStars.js"></script>
+
+  <!-- PRISM -->
+  <link rel="stylesheet" href="../vendor/prism-gh-pages/themes/prism.css">
+  <script src="../vendor/prism-gh-pages/prism.js"></script>
+
+  <!-- Style CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+  <!-- Main js -->
+
+</head>
+<body class="datetimepicker">
+
+    
+    <header class="main-header">
+        <div class="container-fluid bg-color-dgreen pt-3 pb-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 header-logo">
+                        <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                    </div>
+                    <div class="col-md">
+                        <ul class=" main-nav m-0 text-uppercase ">
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle text-white text-uppercase" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">Categories</button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a href="#" class="dropdown-item">sample 1</a>
+                                        <a href="#" class="dropdown-item">sample 2</a>
+                                        <a href="#" class="dropdown-item">sample 3</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <form action="#">
+                                    <input type="text" placeholder="Search..." name="search">
+                                    <button type="submit" class="search-btn"><img src="../images/common/search-icon.png" alt=""></button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="mainContent container-fluid pt-5 pr-0 pl-0">
+
+
+        <div class="slidebox-banner">
+            <div class="text-center">
+                <img src="../images/common/ms-logo.png" alt="SLIDE BOX icon/logo" class="page-logo">
+                <h2>jQuery Date and Time Picker Plugin - datetimepicker</h2>
+                <p>jQuery plugin that popups a simple and clean date & time picker interface when an input field on focus.</p>
+            </div>
+        </div>
+
+        <div class="container pt-3 pb-5">
+            <div class="row">
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title sparkling">DateTimepicker</span>
+<pre>
+<code class="language-css">
+    $('#datetimepicker1').datetimepicker();
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker1" type="text" value="" class="w-100 datetimepicker9 d-picker" readonly></p>
+                    </div>
+                </div>
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- Use mask DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title ">Use Mask DateTimepicker</span>
+<pre>
+<code class="language-css">
+    $('#datetimepicker2').datetimepicker({
+        mask:true
+    });
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker2" type="text" value="" class="w-100 datetimepicker9 d-picker" ></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title ">TimePicker</span>
+<pre>
+<code class="language-css">
+    $('#datetimepicker3').datetimepicker({
+        datepicker:false,
+        format:'H:i'
+    });
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker3" type="text" value="" class="w-100 datetimepicker3 d-picker" ></p>
+                    </div>
+                </div>
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- Use mask DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title sparkling">allowTimes options TimePicker</span>
+<pre>
+<code class="language-css">
+    $('#datetimepicker4').datetimepicker({
+        datepicker:false,
+        allowTimes:[
+        '12:00', '13:00', '15:00',
+        '17:00', '17:05', '17:20', '19:00', '20:00'
+        ]
+    });
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker4" type="text" value="" class="w-100 datetimepicker4 d-picker" ></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title sparkling">minDate and maxDate</span>
+<pre>
+<code class="language-css">
+$('#datetimepicker5').datetimepicker({
+    timepicker:false,
+    formatDate:'Y/m/d',
+    minDate:'-1970/01/02',
+    //yesterday is minimum date
+    maxDate:'+1970/01/02'
+    //tomorrow is maximum date calendar
+});
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker5" type="text" value="" class="w-100 datetimepicker5 d-picker" ></p>
+                    </div>
+                </div>
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- Use mask DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title ">Invert settings minDate and maxDate</span>
+<pre>
+<code class="language-css">
+$('#datetimepicker6').datetimepicker({
+    onGenerate:function( ct ){
+        jQuery(this).find('.xdsoft_date')
+          .toggleClass('xdsoft_disabled');
+        },
+        minDate:'-1970/01/2',
+        maxDate:'+1970/01/2',
+        timepicker:false
+});
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker6" type="text" value="" class="w-100 datetimepicker6 d-picker" ></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title sparkling">Inline DateTimePicker</span>
+<pre>
+<code class="language-css">
+$('#datetimepicker5').datetimepicker({
+    timepicker:false,
+    formatDate:'Y/m/d',
+    minDate:'-1970/01/02',
+    //yesterday is minimum date
+    maxDate:'+1970/01/02'
+    //tomorrow is maximum date calendar
+});
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p><input id="datetimepicker7" type="text" value="" class="w-100 datetimepicker5 d-picker" ></p>
+                    </div>
+                </div>
+                <div class="col bg-dark pt-4 m-3 pb-4 mb-5 plugin-cont">
+                    <!-- Use mask DateTimepicker -->
+                    <div class="titleAndCode">
+                        <span class="text-white col-title sparkling">Range between date#</span>
+<pre>
+<code class="language-css">
+jQuery(function(){
+    jQuery('#date_timepicker_start').datetimepicker({
+     format:'Y/m/d',
+     onShow:function( ct ){
+      this.setOptions({
+       maxDate:jQuery('#date_timepicker_end').val()?jQuery('#date_timepicker_end').val():false
+      })
+     },
+     timepicker:false
+    });
+    jQuery('#date_timepicker_end').datetimepicker({
+     format:'Y/m/d',
+     onShow:function( ct ){
+      this.setOptions({
+       minDate:jQuery('#date_timepicker_start').val()?jQuery('#date_timepicker_start').val():false
+      })
+     },
+     timepicker:false
+    });
+});
+</code>
+</pre>
+                    </div>
+                    <div class="results">
+                        <span class="text-white d-block mt-5">Result</span>
+                        <p class="text-white">Start <input id="date_timepicker_start" type="text" value=""> End <input id="date_timepicker_end" type="text" value=""></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container pb-5 text-center mt-5">
+            <iframe src="frameset/multiStep-frameset.html" title="W3Schools Free Online Web Tutorials" width="90%" height="1000px" >
+            </iframe>
+        </div> -->
+
+
+
+        <footer class="main-footer">
+            <div class="container-fluid bg-color-dgreen pt-5 pb-5">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 header-logo">
+                            <h2 class="m-0"><a href="../index.html" class="text-white">UI Libraries </a></h2>
+                        </div>
+                        <div class="col-md">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+
+    
+
+
+
+</body>
+
+<script>
+
+$('#datetimepicker1').datetimepicker();
+$('#datetimepicker2').datetimepicker({
+    mask:true
+});
+$('#datetimepicker3').datetimepicker({
+    datepicker:false,
+    format:'H:i'
+});
+$('#datetimepicker4').datetimepicker({
+    datepicker:false,
+    allowTimes:[
+    '12:00', '13:00', '15:00',
+    '17:00', '17:05', '17:20', '19:00', '20:00'
+    ],
+    format:'H:i'
+});
+$('#datetimepicker5').datetimepicker({
+    timepicker:false,
+    formatDate:'Y/m/d',
+    minDate:'-1970/01/02',//yesterday is minimum date(for today use 0 or -1970/01/01)
+    maxDate:'+1970/01/02'//tomorrow is maximum date calendar
+});
+$('#datetimepicker6').datetimepicker({
+  onGenerate:function( ct ){
+  jQuery(this).find('.xdsoft_date')
+    .toggleClass('xdsoft_disabled');
+  },
+  minDate:'-1970/01/2',
+  maxDate:'+1970/01/2',
+  timepicker:false,
+});
+$('#datetimepicker7').datetimepicker({
+  inline: true
+});
+jQuery(function(){
+ jQuery('#date_timepicker_start').datetimepicker({
+  format:'Y/m/d',
+  onShow:function( ct ){
+   this.setOptions({
+    maxDate:jQuery('#date_timepicker_end').val()?jQuery('#date_timepicker_end').val():false
+   })
+  },
+  timepicker:false
+ });
+ jQuery('#date_timepicker_end').datetimepicker({
+  format:'Y/m/d',
+  onShow:function( ct ){
+   this.setOptions({
+    minDate:jQuery('#date_timepicker_start').val()?jQuery('#date_timepicker_start').val():false
+   })
+  },
+  timepicker:false
+ });
+});
+</script>
+
+</html>
